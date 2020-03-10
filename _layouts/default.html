@@ -6,9 +6,11 @@
     {% if page.title %}{{ page.title }}{% endif %}
     {% unless page.title %}{{ site.title }}{% endunless %}
   </title>
+  {% include common_styles.html %}
 </head>
 <body>
   Now used my layout!
   {{ content }}
+  {% include common_scripts.html %}
 </body>
 </html>

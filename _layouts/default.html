@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>
+    {% if page.title %}{{ page.title }}{% endif %}
+    {% unless page.title %}{{ site.title }}{% endunless %}
+  </title>
+</head>
+<body>
+  Now used my layout!
+  {{ content }}
+</body>
+</html>

@@ -27,7 +27,7 @@ twitter_username: bgn_nakazato
 github_username:  nkzttt
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
 

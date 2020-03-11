@@ -2,6 +2,8 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <!--  TODO: SEO タグ書く（plubin は微妙だった）-->
+  <meta name="robots" content="noindex , nofollow" />
   <title>
     {% if page.title %}{{ page.title }}{% endif %}
     {% unless page.title %}{{ site.title }}{% endunless %}
@@ -12,5 +14,8 @@
   Now used my default layout!
   {{ content }}
   {% include common_scripts.html %}
+  {% if jekyll.environment == "production" %}
+  place here for production codes.
+  {% endif %}
 </body>
 </html>

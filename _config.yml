@@ -28,8 +28,8 @@ github_username:  nkzttt
 
 # Build settings
 # theme: minima
-# plugins:
-#   - jekyll-feed
+plugins:
+  - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -60,3 +60,5 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+
+paginate: 5

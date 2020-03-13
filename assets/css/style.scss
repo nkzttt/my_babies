@@ -1,3 +1,18 @@
 ---
 ---
 @import "ress";
+
+@font-face {
+  font-family: "work memo";
+  font-weight: 100;
+  src: url('{{ "/assets/fonts/work_memo.ttf" | relative_url }}');
+  font-display: swap;
+}
+
+html {
+  font-size: 20px;
+}
+body {
+  font-family: "work memo", sans-serif;
+  line-height: 1;
+}

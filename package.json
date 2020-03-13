@@ -11,7 +11,7 @@
     "compress": "npm run compress:css",
     "compress:css": "path=_site/assets/css/style.css && cleancss $path -o $path",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d _site",
+    "deploy": "gh-pages -d _site && echo \"open https://nkzttt.github.io/my_babies/\"",
     "create": "[ $TITLE ] && npm run create_post_file || echo \"you need specify TITLE.\"",
     "create_post_file": "today=`date +\"%Y-%m-%d\"` && echo \"---\nlayout: post\npublished_at: $today\ntitle: 入力\n---\n\nfirst line.\" > _posts/$today-$TITLE.md"
   },

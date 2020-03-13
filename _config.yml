@@ -41,6 +41,7 @@ plugins:
 #
 exclude:
   - README.md
+  - idea.md
   - package.json
   - package-lock.json
 #   - .sass-cache/

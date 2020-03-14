@@ -1,0 +1,55 @@
+.loading {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $white;
+  &__animationItem {
+    position: absolute;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    transform: translateY(-100%);
+    animation-name: loading;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    &:nth-child(1) {
+      left: 0;
+      background-color: $white;
+      animation-delay: 0ms;
+    }
+    &:nth-child(2) {
+      left: 20%;
+      background-color: $black;
+      animation-delay: 150ms;
+    }
+    &:nth-child(3) {
+      left: 40%;
+      background-color: $yellow;
+      animation-delay: 300ms;
+    }
+    &:nth-child(4) {
+      left: 60%;
+      background-color: $dimYellow;
+      animation-delay: 450ms;
+    }
+    &:nth-child(5) {
+      left: 80%;
+      background-color: $deepYellow;
+      animation-delay: 600ms;
+    }
+  }
+}
+@keyframes loading {
+  0% {
+    transform: translateY(100%);
+  }
+  67% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}

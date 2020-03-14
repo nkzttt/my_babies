@@ -4,19 +4,12 @@
 @import "colors";
 @import "loading";
 
-@font-face {
-  font-family: "work memo";
-  font-weight: 100;
-  src: url('{{ "/assets/fonts/work_memo.woff2" | relative_url }}');
-  font-display: swap;
-}
-
 html {
   font-size: 20px;
 }
 body {
   background: $white;
   color: $black;
-  font-family: "work memo", sans-serif;
+  font-family: "work memo", serif;
   line-height: 1;
 }

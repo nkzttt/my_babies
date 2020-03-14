@@ -7,7 +7,7 @@
 @font-face {
   font-family: "work memo";
   font-weight: 100;
-  src: url('{{ "/assets/fonts/work_memo.ttf" | relative_url }}');
+  src: url('{{ "/assets/fonts/work_memo.woff2" | relative_url }}');
   font-display: swap;
 }
 

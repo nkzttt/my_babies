@@ -12,9 +12,8 @@
     height: 100%;
     transform: translateY(-100%);
     animation-name: loading;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
     &:nth-child(1) {
       left: 0;
       background-color: $white;
@@ -43,13 +42,10 @@
   }
 }
 @keyframes loading {
-  0% {
+  from {
     transform: translateY(100%);
   }
-  67% {
-    transform: translateY(-100%);
-  }
-  100% {
+  to {
     transform: translateY(-100%);
   }
 }

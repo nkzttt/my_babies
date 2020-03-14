@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "fonts.css",
+	"sources": [
+		"fonts.scss"
+	],
+	"sourcesContent": [
+		"@font-face {\n  font-family: \"work memo\";\n  font-weight: 100;\n  src: url('/my_babies/assets/fonts/work_memo.woff2');\n  font-display: swap;\n}\n"
+	],
+	"names": [],
+	"mappings": "AAAA,UAAU,GACR,WAAW,EAAE,WAAW,EACxB,WAAW,EAAE,GAAG,EAChB,GAAG,EAAE,8CAA8C,EACnD,YAAY,EAAE,IAAI"
+}

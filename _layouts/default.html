@@ -16,9 +16,27 @@
   {% include common_styles.html %}
 </head>
 <body>
-  Now used my default layout!
-  and font awesome <i class="fas fa-check-circle"></i>!
-  {{ content }}
+<div class="container">
+  <header class="header">
+    <div class="header__fitContainer">
+      <h1 class="header__title">
+        {{ site.title }}
+      </h1>
+      <div class="header__footprint header__footprint--first">
+        {% include footprint.html index="first" %}
+      </div>
+      <div class="header__footprint header__footprint--second">
+        {% include footprint.html index="second" %}
+      </div>
+      <div class="header__footprint header__footprint--third">
+        {% include footprint.html index="third" %}
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    {{ content }}
+  </main>
+</div>
   {% include loading.html %}
   {% include common_scripts.html %}
 </body>

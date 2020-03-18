@@ -1,0 +1,83 @@
+.footprint {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.footBase, .footFinger {
+  width: 100%;
+  height: 100%;
+  > div {
+    position: absolute;
+    background-color: $yellow;
+    border-radius: 50%;
+  }
+}
+.footprint {
+  &--first {
+    .footBase, .footFinger {
+      > div {
+        background-color: $yellow;
+      }
+    }
+  }
+  &--second {
+    .footBase, .footFinger {
+      > div {
+        background-color: $dimYellow;
+      }
+    }
+  }
+  &--third {
+    .footBase, .footFinger {
+      > div {
+        background-color: $deepYellow;
+      }
+    }
+  }
+}
+.footBase {
+  &__item1 {
+    width: 24%;
+    height: 24%;
+    bottom: 0;
+    right: 0;
+  }
+  &__item2 {
+    width: 40%;
+    height: 40%;
+    bottom: 26%;
+    right: 0;
+  }
+}
+.footFinger {
+  &__item1 {
+    width: 20%;
+    height: 20%;
+    bottom: 72%;
+    right: 0;
+  }
+  &__item2 {
+    width: 12%;
+    height: 12%;
+    bottom: 76%;
+    right: 26%;
+  }
+  &__item3 {
+    width: 12%;
+    height: 12%;
+    bottom: 66%;
+    right: 38%;
+  }
+  &__item4 {
+    width: 12%;
+    height: 12%;
+    bottom: 54%;
+    right: 46%;
+  }
+  &__item5 {
+    width: 12%;
+    height: 12%;
+    bottom: 40%;
+    right: 48%;
+  }
+}

@@ -2,14 +2,51 @@
 ---
 @import "ress";
 @import "colors";
+@import "sizes";
 @import "loading";
+@import "footprint";
 
 html {
-  font-size: 20px;
+  font-size: $middle;
 }
 body {
   background: $white;
   color: $black;
   font-family: "work memo", serif;
   line-height: 1;
+}
+
+.header {
+  padding: 10px;
+  &__fitContainer {
+    display: inline-block;
+    position: relative;
+  }
+  &__title {
+    font-size: $large;
+  }
+  &__footprint {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    &--first {
+      bottom: -25px;
+      right: -5px;
+      transform: scale(-1, 1) rotate(-75deg);
+    }
+    &--second {
+      bottom: 5px;
+      right: -25px;
+      transform: rotate(75deg);
+    }
+    &--third {
+      bottom: -15px;
+      right: -55px;
+      transform: scale(-1, 1) rotate(-75deg);
+    }
+  }
+}
+
+.main {
+  padding: 10px;
 }

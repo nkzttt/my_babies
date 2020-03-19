@@ -29,6 +29,9 @@ body {
   margin-bottom: 30px;
   padding-top: 15px;
   text-align: center;
+  @media (max-width: $break-point) {
+    margin-bottom: 60px;
+  }
   &__fitContainer {
     display: inline-block;
     position: relative;

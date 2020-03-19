@@ -11,18 +11,21 @@ ul {
   list-style: none;
 }
 
-html {
-  font-size: $font-middle;
-}
 body {
-  background: $white;
+  background: $black;
   color: $black;
+  font-size: $font-middle;
   font-family: "work memo", serif;
   line-height: 1;
 }
 
+.container {
+  background: $white;
+}
+
 .header {
   position: relative;
+  z-index: 1;
   margin-bottom: 30px;
   padding-top: 15px;
   text-align: center;
@@ -86,5 +89,48 @@ body {
 
 .main {
   position: relative;
+  z-index: 1;
   padding-bottom: 15px;
+}
+
+.footer {
+  padding: 15px 0;
+  background: $black;
+  color: $white;
+  @media (max-width: $break-point) {
+    padding: 15px;
+  }
+  &__refusal {
+    margin-bottom: 30px;
+    font-size: $font-small;
+    text-align: center;
+    letter-spacing: .1em;
+    @media (max-width: $break-point) {
+      text-align: left;
+      line-height: 1.3;
+    }
+  }
+  &__author {
+    width: $width;
+    margin: 0 auto;
+    @media (max-width: $break-point) {
+      width: auto;
+    }
+  }
+}
+
+.author {
+  font-size: $font-small;
+  text-align: right;
+  &__link {
+    color: $white;
+    text-decoration: none;
+  }
+  &__formatter {
+    display: inline-flex;
+    align-items: center;
+  }
+  &__twitterIcon {
+    margin-right: 5px;
+  }
 }

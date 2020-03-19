@@ -30,6 +30,9 @@ body {
     display: inline-block;
     position: relative;
     padding-right: 55px;
+    @media (max-width: $break-point) {
+      padding-right: 0;
+    }
   }
   &__title {
     font-size: $font-middle;
@@ -55,20 +58,33 @@ body {
       bottom: -25px;
       right: 50px;
       transform: scale(-1, 1) rotate(-75deg);
+      @media (max-width: $break-point) {
+        bottom: -45px;
+        right: 35px;
+      }
     }
     &--second {
       bottom: 5px;
       right: 30px;
       transform: rotate(75deg);
+      @media (max-width: $break-point) {
+        bottom: -15px;
+        right: 15px;
+      }
     }
     &--third {
       bottom: -15px;
       right: 0;
       transform: scale(-1, 1) rotate(-75deg);
+      @media (max-width: $break-point) {
+        bottom: -35px;
+        right: -15px;
+      }
     }
   }
 }
 
 .main {
   position: relative;
+  padding-bottom: 15px;
 }

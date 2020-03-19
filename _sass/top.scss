@@ -7,6 +7,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-bottom: 60px;
+  @media (max-width: $break-point) {
+    grid-template-columns: none;
+  }
 }
 .post {
   padding: 30px 30px 0;
@@ -39,12 +42,18 @@
   }
   &:nth-child(3n - 1) {
     padding-top: 45px;
+    @media (max-width: $break-point) {
+      padding-top: 30px;
+    }
     > .post__link::after {
       background: linear-gradient(to left, transparent, $dimYellow);
     }
   }
   &:nth-child(3n) {
     padding-top: 60px;
+    @media (max-width: $break-point) {
+      padding-top: 30px;
+    }
     > .post__link::after {
       background: linear-gradient(to left, transparent, $deepYellow);
     }
@@ -71,13 +80,11 @@
     }
   }
   &:nth-child(3n - 1) {
-    padding-top: 45px;
     .post__dateIcon {
       color: $dimYellow;
     }
   }
   &:nth-child(3n) {
-    padding-top: 60px;
     .post__dateIcon {
       color: $deepYellow;
     }

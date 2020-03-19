@@ -62,4 +62,4 @@ defaults:
     values:
       layout: "post"
 
-paginate: 5
+paginate: 9

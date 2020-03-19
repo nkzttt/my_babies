@@ -5,9 +5,14 @@
 @import "sizes";
 @import "loading";
 @import "footprint";
+@import "top";
+
+ul {
+  list-style: none;
+}
 
 html {
-  font-size: $middle;
+  font-size: $font-middle;
 }
 body {
   background: $white;
@@ -17,13 +22,30 @@ body {
 }
 
 .header {
-  padding: 10px;
+  position: relative;
+  margin-bottom: 30px;
+  padding-top: 15px;
+  text-align: center;
   &__fitContainer {
     display: inline-block;
     position: relative;
+    padding-right: 55px;
   }
   &__title {
-    font-size: $large;
+    font-size: $font-middle;
+    &::after {
+      content: "";
+      display: block;
+      height: 10px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background: linear-gradient(to right, $yellow 33%, $dimYellow 66%, $deepYellow 100%);
+      filter: blur(15px);
+      opacity: .4;
+    }
   }
   &__footprint {
     width: 25px;
@@ -31,22 +53,22 @@ body {
     position: absolute;
     &--first {
       bottom: -25px;
-      right: -5px;
+      right: 50px;
       transform: scale(-1, 1) rotate(-75deg);
     }
     &--second {
       bottom: 5px;
-      right: -25px;
+      right: 30px;
       transform: rotate(75deg);
     }
     &--third {
       bottom: -15px;
-      right: -55px;
+      right: 0;
       transform: scale(-1, 1) rotate(-75deg);
     }
   }
 }
 
 .main {
-  padding: 10px;
+  position: relative;
 }

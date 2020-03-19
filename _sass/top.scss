@@ -1,0 +1,92 @@
+.top {
+  max-width: $width;
+  margin: 0 auto;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 60px;
+}
+.post {
+  padding: 30px 30px 0;
+  &__link {
+    display: block;
+    position: relative;
+    color: $black;
+    text-decoration: none;
+    &::after {
+      content: "";
+      display: block;
+      width: 70%;
+      height: 70%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      filter: blur(15px);
+      opacity: .2;
+      transition: opacity 300ms ease-in;
+    }
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+  &:nth-child(3n - 2) {
+    > .post__link::after {
+      background: linear-gradient(to left, transparent, $yellow);
+    }
+  }
+  &:nth-child(3n - 1) {
+    padding-top: 45px;
+    > .post__link::after {
+      background: linear-gradient(to left, transparent, $dimYellow);
+    }
+  }
+  &:nth-child(3n) {
+    padding-top: 60px;
+    > .post__link::after {
+      background: linear-gradient(to left, transparent, $deepYellow);
+    }
+  }
+  &__title {
+    margin-bottom: 5px;
+    font-size: $font-large;
+  }
+  &__excerpt {
+    margin-bottom: 15px;
+  }
+  &__date {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__dateIcon {
+    margin-right: 5px;
+    font-size: $font-small;
+  }
+  &:nth-child(3n - 2) {
+    .post__dateIcon {
+      color: $yellow;
+    }
+  }
+  &:nth-child(3n - 1) {
+    padding-top: 45px;
+    .post__dateIcon {
+      color: $dimYellow;
+    }
+  }
+  &:nth-child(3n) {
+    padding-top: 60px;
+    .post__dateIcon {
+      color: $deepYellow;
+    }
+  }
+}
+
+.pager {
+  text-align: center;
+  > a {
+    color: $dimYellow;
+  }
+}

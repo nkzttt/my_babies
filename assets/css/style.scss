@@ -11,6 +11,11 @@
 ul {
   list-style: none;
 }
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
 
 body {
   background: $black;
@@ -98,11 +103,11 @@ body {
 }
 
 .footer {
-  padding: 15px 0;
+  padding: 15px 0 30px;
   background: $black;
   color: $white;
   @media (max-width: $break-point) {
-    padding: 15px;
+    padding: 15px 15px 30px;
   }
   &__refusal {
     margin-bottom: 30px;
@@ -117,6 +122,16 @@ body {
   &__author {
     width: $width;
     margin: 0 auto;
+    @media (max-width: $break-point) {
+      width: auto;
+    }
+  }
+  &__visual {
+    display: flex;
+    width: $width;
+    margin: 0 auto;
+    padding-top: 30px;
+    justify-content: flex-end;
     @media (max-width: $break-point) {
       width: auto;
     }
@@ -136,5 +151,24 @@ body {
   }
   &__twitterIcon {
     margin-right: 5px;
+  }
+}
+
+.visual {
+  width: 176px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,.2);
+  transform: rotate(10deg);
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: solid 5px $white;
+  }
+  @media (max-width: $break-point) {
+    width: 132px;
   }
 }

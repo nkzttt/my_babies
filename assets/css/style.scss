@@ -103,11 +103,16 @@ body {
 }
 
 .footer {
+  position: relative;
   padding: 15px 0 30px;
   background: $black;
   color: $white;
   @media (max-width: $break-point) {
     padding: 15px 15px 30px;
+  }
+  &__contents {
+    position: relative;
+    z-index: 1;
   }
   &__refusal {
     margin-bottom: 30px;
@@ -170,5 +175,18 @@ body {
   }
   @media (max-width: $break-point) {
     width: 132px;
+  }
+}
+.fixedContents {
+  &__gradient {
+    position: fixed;
+    bottom: -10%;
+    right: -10%;
+    width: 50%;
+    height: 30%;
+    background: linear-gradient(to right, transparent 20%, $black 40%, $yellow 60%, $dimYellow 80%, $deepYellow 100%);
+    opacity: .1;
+    transform: rotate(-30deg);
+    filter: blur(60px);
   }
 }

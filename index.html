@@ -8,10 +8,9 @@ layout: default
     <li class="post">
       <a href="{{ post.url | relative_url }}" class="post__link">
         <h2 class="post__title">{{ post.title }}</h2>
-        <div class="post__excerpt">
-          <!-- excerpt は p タグでラップされている -->
-          {{ post.excerpt }}
-        </div>
+        <p class="post__excerpt">
+          {{ post.excerpt | strip_html }}
+        </p>
         <div class="post__date">
           <div class="post__dateIcon fas fa-clock"></div>
           <p>

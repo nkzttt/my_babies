@@ -161,7 +161,7 @@ body {
 
 .visual {
   width: 176px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,.2);
+  position: relative;
   transform: rotate(10deg);
   &::after {
     content: "";
@@ -175,6 +175,23 @@ body {
   }
   @media (max-width: $break-point) {
     width: 132px;
+  }
+  &__pin {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    color: $dimYellow;
+    transform: translate(-50%, -50%);
+  }
+  &:nth-child(3n - 2) &__pin {
+    color: $yellow;
+  }
+  &:nth-child(3n - 1) &__pin {
+    color: $dimYellow;
+  }
+  &:nth-child(3n) &__pin {
+    color: $deepYellow;
   }
 }
 .fixedContents {

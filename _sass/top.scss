@@ -89,20 +89,14 @@
     margin-right: 5px;
     font-size: $font-small;
   }
-  &:nth-child(3n - 2) {
-    .post__dateIcon {
-      color: $yellow;
-    }
+  &:nth-child(3n - 2) &__dateIcon {
+    color: $yellow;
   }
-  &:nth-child(3n - 1) {
-    .post__dateIcon {
-      color: $dimYellow;
-    }
+  &:nth-child(3n - 1) &__dateIcon {
+    color: $dimYellow;
   }
-  &:nth-child(3n) {
-    .post__dateIcon {
-      color: $deepYellow;
-    }
+  &:nth-child(3n) &__dateIcon {
+    color: $deepYellow;
   }
 }
 

@@ -1,3 +1,79 @@
-.articleBody {
-  letter-spacing: .15em;
+.article {
+  padding-top: 30px;
+  &__header {
+    width: 50%;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 80px;
+    @media (max-width: $break-point) {
+      width: 70%;
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      bottom: 40px;
+      left: 30px;
+      border-radius: 50%;
+      background-color: $yellow;
+      box-shadow: 0 20px 0 $dimYellow, 0 40px 0 $deepYellow;
+    }
+  }
+  &__body {
+    margin-top: -0.3em;
+    padding-left: 30px;
+    padding-bottom: 120px;
+    > p {
+      letter-spacing: .15em;
+      line-height: 1.6;
+      @media (max-width: $break-point) {
+        line-height: 1.4;
+      }
+      + p {
+        margin-top: 1.6em;
+        @media (max-width: $break-point) {
+          margin-top: 1.4em;
+        }
+      }
+      + h2, + h3, + h4, + h5, + h6 {
+        display: inline-block;
+        position: relative;
+        margin: 60px 0 15px;
+        padding-bottom: 5px;
+        font-size: $font-large;
+        overflow: hidden;
+        &::after {
+          content: "";
+          display: block;
+          width: 100px;
+          height: 30px;
+          position: absolute;
+          bottom: -20px;
+          left: 0;
+          z-index: -1;
+          background-color: $yellow;
+          transform: translateX(-15px) rotate(5deg);
+        }
+      }
+    }
+  }
+}
+
+.articleDate {
+  margin-bottom: 5px;
+  padding-left: 30px;
+}
+.articleTitle {
+  padding: 30px;
+  background-color: $yellow;
+  &__text {
+    font-size: $font-large;
+    line-height: 1.4;
+    @media (max-width: $break-point) {
+      font-size: $font-middle;
+    }
+  }
 }

@@ -79,6 +79,7 @@
     margin-bottom: 10px;
     line-height: 1.2;
     letter-spacing: .15em;
+    opacity: .4;
   }
   &__date {
     display: flex;
@@ -88,6 +89,9 @@
   &__dateIcon {
     margin-right: 5px;
     font-size: $font-small;
+  }
+  &__dateText {
+    opacity: .4;
   }
   &:nth-child(3n - 2) &__dateIcon {
     color: $yellow;

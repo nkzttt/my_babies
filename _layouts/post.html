@@ -1,10 +1,26 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
-<p>{{ page.published_at | date: '%Y年%m月%d日'}}</p>
-<p>{{ page.updated_at | date: '%Y年%m月%d日'}}</p>
-
-<div class="articleBody">
-  {{ content }}
-</div>
+<article class="article">
+  <header class="article__header">
+    <div class="articleDate">
+      {% if page.updated_at %}
+      <p>{{ page.published_at | date: '%Y年%m月%d日'}}</p>
+      <p>
+        <time datetime="{{ page.updated_at }}">{{ page.updated_at | date: '%Y年%m月%d日'}}</time>
+      </p>
+      {% endif %}
+      {% unless page.updated_at %}
+      <p>
+        <time datetime="{{ page.published_at }}">{{ page.published_at | date: '%Y年%m月%d日'}}</time>
+      </p>
+      {% endunless %}
+    </div>
+    <div class="articleTitle">
+      <h1 class="articleTitle__text">{{ page.title }}</h1>
+    </div>
+  </header>
+  <div class="article__body">
+    {{ content }}
+  </div>
+</article>

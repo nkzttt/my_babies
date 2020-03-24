@@ -18,7 +18,7 @@
 <body>
 <div class="container">
   <header class="header">
-    <div class="header__fitContainer">
+    <a href="{{ "/" | relative_url }}" class="header__fitContainerLink">
       <h1 class="header__title">
         {{ site.title }}
       </h1>
@@ -31,7 +31,7 @@
       <div class="header__footprint header__footprint--third">
         {% include footprint.html index="third" %}
       </div>
-    </div>
+    </a>
   </header>
   <main class="main">
     {{ content }}

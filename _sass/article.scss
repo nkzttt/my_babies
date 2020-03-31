@@ -1,30 +1,29 @@
 .article {
-  padding-top: 30px;
+  padding: 30px 30px 0;
+  @media (max-width: $break-point) {
+    padding: 30px 15px 0;
+  }
   &__header {
-    width: 50%;
-    display: inline-block;
+    max-width: $width;
+    margin: 0 auto;
+  }
+  &__body {
+    max-width: $width;
     position: relative;
-    margin-bottom: 30px;
-    padding-bottom: 80px;
-    @media (max-width: $break-point) {
-      width: 70%;
-    }
-    &::after {
+    margin: -0.3em auto 0;
+    padding: 110px 0 120px;
+    &::before {
       content: "";
       display: block;
       width: 10px;
       height: 10px;
       position: absolute;
-      bottom: 40px;
-      left: 30px;
+      top: calc(0.3em + 30px);
+      left: 0;
       border-radius: 50%;
       background-color: $yellow;
       box-shadow: 0 20px 0 $dimYellow, 0 40px 0 $deepYellow;
     }
-  }
-  &__body {
-    margin-top: -0.3em;
-    padding: 0 5px 120px 30px;
     > p {
       letter-spacing: .15em;
       line-height: 1.6;
@@ -63,11 +62,27 @@
 
 .articleDate {
   margin-bottom: 5px;
-  padding-left: 30px;
 }
 .articleTitle {
+  width: 50%;
+  position: relative;
   padding: 30px;
+  padding-left: 0;
   background-color: $yellow;
+  @media (max-width: $break-point) {
+    width: 70%;
+  }
+  &::before {
+    content: "";
+    display: block;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    z-index: -1;
+    background-color: $yellow;
+  }
   &__text {
     font-size: $font-large;
     line-height: 1.4;

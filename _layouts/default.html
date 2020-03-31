@@ -6,12 +6,10 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!--  TODO: SEO タグ書く（plubin は微妙だった）-->
-  <meta name="robots" content="noindex , nofollow" />
+  {% include twitter_card.html %}
   <link rel="shortcut icon" href="favicon.ico">
   <title>
-    {% if page.title %}{{ page.title }}{% endif %}
-    {% unless page.title %}{{ site.title }}{% endunless %}
+    {% if page.title %}{{ page.title }}{% endif %}{% unless page.title %}{{ site.title }}{% endunless %}
   </title>
   {% include common_styles.html %}
 </head>

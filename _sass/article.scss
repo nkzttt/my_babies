@@ -41,6 +41,7 @@
         position: relative;
         margin: 60px 0 30px;
         padding-bottom: 5px;
+        border-radius: 3px;
         font-size: $font-large;
         overflow: hidden;
         &::after {
@@ -52,6 +53,7 @@
           bottom: -20px;
           left: 0;
           z-index: -1;
+          border-radius: inherit;
           background-color: $yellow;
           transform: translateX(-15px) rotate(5deg);
         }
@@ -68,6 +70,8 @@
   position: relative;
   padding: 30px;
   padding-left: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
   background-color: $yellow;
   @media (max-width: $break-point) {
     width: 70%;

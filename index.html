@@ -12,9 +12,8 @@ layout: default
           {{ post.excerpt | strip_html }}
         </p>
         <div class="post__date">
-          <div class="post__dateIcon fas fa-clock"></div>
           <p class="post__dateText">
-            {{ post.published_at }}
+            {{ post.published_at | date: '%Y年%m月%d日' }}
           </p>
         </div>
       </a>

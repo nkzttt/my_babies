@@ -4,15 +4,15 @@
 }
 
 .posts {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-bottom: 60px;
+  padding: 30px 30px 0;
   @media (max-width: $break-point) {
-    grid-template-columns: none;
+    padding: 30px 15px 0;
   }
 }
 .post {
-  padding: 30px 30px 0;
+  & + & {
+    margin-top: 30px;
+  }
   &__link {
     display: block;
     position: relative;
@@ -35,28 +35,14 @@
       opacity: 1;
     }
   }
-  &:nth-child(3n - 2) {
-    > .post__link::after {
-      background: linear-gradient(to left, transparent, $yellow);
-    }
+  &:nth-child(3n - 2) > &__link::after {
+    background: linear-gradient(to left, transparent, $yellow);
   }
-  &:nth-child(3n - 1) {
-    padding-top: 45px;
-    @media (max-width: $break-point) {
-      padding-top: 30px;
-    }
-    > .post__link::after {
-      background: linear-gradient(to left, transparent, $dimYellow);
-    }
+  &:nth-child(3n - 1) > &__link::after {
+    background: linear-gradient(to left, transparent, $dimYellow);
   }
-  &:nth-child(3n) {
-    padding-top: 60px;
-    @media (max-width: $break-point) {
-      padding-top: 30px;
-    }
-    > .post__link::after {
-      background: linear-gradient(to left, transparent, $deepYellow);
-    }
+  &:nth-child(3n) > &__link::after {
+    background: linear-gradient(to left, transparent, $deepYellow);
   }
   &__title {
     display: inline-block;
@@ -64,27 +50,12 @@
     margin-bottom: 15px;
     padding-bottom: 5px;
     font-size: $font-large;
-    &::after {
-      content: "";
-      display: block;
-      height: 0;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      border-bottom: dotted 2px $black;
-    }
   }
   &__excerpt {
     margin-bottom: 10px;
+    @include readableFont();
     font-size: $font-small;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans CJK JP", "Original Yu Gothic", "Yu Gothic", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
-    font-weight: 300;
     line-height: 1.5;
-    letter-spacing: .15em;
-    @media (max-width: $break-point) {
-      font-weight: 400;
-    }
   }
   &__date {
     display: flex;

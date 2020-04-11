@@ -61,6 +61,13 @@
           opacity: .4;
         }
       }
+      > a {
+        color: $deepYellow;
+        &:hover {
+          color: $dimYellow;
+          text-decoration: none;
+        }
+      }
     }
   }
 }

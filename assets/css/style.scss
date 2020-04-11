@@ -230,7 +230,7 @@ body {
     font-size: $font-small;
     text-decoration: none;
     &:hover {
-      border-bottom: none;
+      border-bottom-color: transparent;
     }
   }
   &__twitterIcon {

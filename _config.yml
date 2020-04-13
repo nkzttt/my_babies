@@ -62,4 +62,6 @@ defaults:
     values:
       layout: "post"
 
-paginate: 9
+paginate: 10
+
+source: "src"

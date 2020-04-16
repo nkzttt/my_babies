@@ -1,7 +1,7 @@
 ---
-layout: post
 published_at: 2020-02-01
 title: パパ抱っこ拒否
+tags: [childcare]
 ---
 
 これは心が折れる！  

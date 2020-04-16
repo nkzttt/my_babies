@@ -1,7 +1,7 @@
 ---
-layout: post
 published_at: 2020-01-28
 title: 我が家の子育て環境
+tags: [childcare]
 ---
 
 はっきり言って、カンペキです！  

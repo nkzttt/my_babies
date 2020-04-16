@@ -31,6 +31,26 @@
       </div>
     </a>
   </header>
+  <!-- ここから -->
+  {% for tag in site.tags %}
+  {% assign tagName = tag[0] %}
+  {% assign tagPosts = tag[1] %}
+  {% if tagName == 'childcare' %}{% assign tagName = '子育ての話' %}{% endif %}
+  {% if tagName == 'money' %}{% assign tagName = 'お金の話' %}{% endif %}
+  <h3>{{ tagName }}({{ tagPosts.size }})</h3>
+  <ul>
+    {% for post in tagPosts | limit: 3 %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+  <h3>最近の投稿</h3>
+  <ul>
+    {% for post in site.posts | limit: 3 %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+  <!-- ここまで切り出す -->
   <div class="body">
     <div class="body__main">
       <main class="main">

@@ -1,0 +1,18 @@
+{% if jekyll.environment == "production" %}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- basic -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1457717272045938"
+     data-ad-slot="7815171146"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+{% endif %}
+{% unless jekyll.environment == "production" %}
+<div style="padding: 50px 0; background-color: #fff; text-align: center;">
+  広告欄
+</div>
+{% endunless %}

@@ -8,11 +8,7 @@
   });
   var $loading = $('.loading');
   if ($loading.get().length === 0) return; // for development
-  $loading.children(':last').on('animationend', function () {
-    if (isLoaded) {
-      $loading.fadeOut(300);
-      return;
-    }
+  var startAnimation = function () {
     $loading.children().each(function () {
       var $this = $(this);
       $this.hide();
@@ -20,5 +16,18 @@
         $this.show();
       }, 300);
     });
+  };
+  // js 評価時に animation が終わっていた場合の対策用フラグ
+  var maybeAlreadyEnd = true;
+  $loading.children(':last').on('animationend', function () {
+    maybeAlreadyEnd = false;
+    if (isLoaded) {
+      $loading.fadeOut(300);
+      return;
+    }
+    startAnimation();
   });
+  setTimeout(function () {
+    if (maybeAlreadyEnd) startAnimation();
+  }, 2000); // 確実にアニメーションが終わる秒数を指定すること
 })();

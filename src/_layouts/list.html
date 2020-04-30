@@ -3,6 +3,11 @@ layout: default
 ---
 
 <div class="list">
+  {% if page.title != site.title %}
+  <div class="list__header">
+    <h2 class="list__title">{{ page.title }}</h2>
+  </div>
+  {% endif %}
   <ul class="posts">
     {% for post in paginator.posts %}
     <li class="post">
@@ -31,13 +36,13 @@ layout: default
     <span class="fas fa-angle-left"></span>
     {% endif %}
 
-    {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-    <em>{{ page }}</em>
-    {% elsif page == 1 %}
-    <a href="{{ paginator.previous_page_path | relative_url }}">{{ page }}</a>
+    {% for pageNum in (1..paginator.total_pages) %}
+    {% if pageNum == paginator.page %}
+    <em>{{ pageNum }}</em>
+    {% elsif pageNum == 1 %}
+    <a href="{{ paginator.previous_page_path | relative_url }}">{{ pageNum }}</a>
     {% else %}
-    <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+    <a href="{{ page.permalink | relative_url | replace: 'index.html', pageNum | append: '/' }}">{{ pageNum }}</a>
     {% endif %}
     {% endfor %}
 

@@ -3,13 +3,13 @@
   @media (max-width: $break-point) {
     padding: 30px 15px 0;
   }
-  &__header {
-    margin: 0 auto;
-  }
   &__body {
     position: relative;
-    margin: 0 auto;
+    margin-bottom: 90px;
     padding-top: 110px;
+    @media (max-width: $break-point) {
+      margin-bottom: 60px;
+    }
     &::before {
       content: "";
       display: block;
@@ -93,6 +93,12 @@
           white-space: normal;
         }
       }
+    }
+  }
+  &__adsense {
+    margin-bottom: 90px;
+    @media (max-width: $break-point) {
+      margin-bottom: 60px;
     }
   }
 }

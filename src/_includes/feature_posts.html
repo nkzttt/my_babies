@@ -1,28 +1,56 @@
-{% for tag in site.tags %}
-{% assign tagName = tag[0] %}
-{% assign tagPosts = tag[1] %}
-{% if tagName == 'childcare' %}{% assign tagName = '子育ての話' %}{% endif %}
-{% if tagName == 'money' %}{% assign tagName = 'お金の話' %}{% endif %}
-<h3>{{ tagName }}</h3>
-<ul>
-  {% for post in tagPosts limit: 3 %}
-  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+<div class="featurePosts">
+  {% for tag in site.tags %}
+  {% assign tagName = tag[0] %}
+  {% assign tagPosts = tag[1] %}
+  {% if tagName == 'childcare' %}{% assign tagName = '子育ての話' %}{% endif %}
+  {% if tagName == 'money' %}{% assign tagName = 'お金の話' %}{% endif %}
+  <nav class="featurePosts__item feature">
+    <h3 class="feature__title">{{ tagName }}</h3>
+    <div class="feature__body">
+      <ul class="feature__items">
+        {% for post in tagPosts limit: 3 %}
+        <li class="feature__item">
+          <a href="{{ post.url | relative_url }}" class="featureLink">
+            <p class="featureLink__title">
+              {{ post.title }}
+            </p>
+            <p class="featureLink__excerpt">
+              {{ post.excerpt | strip_html }}
+            </p>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% if tagPosts.size > 3 %}
+      <p class="feature__more">
+        <a href="{{"/tags/" | append: tag[0] | append: "/" | relative_url}}" class="feature__moreLink">もっと見る</a>
+      </p>
+      {% endif %}
+    </div>
+  </nav>
   {% endfor %}
-</ul>
-{% if tagPosts.size > 3 %}
-<p>
-  <a href="{{"/tags/" | append: tag[0] | append: "/" | relative_url}}">もっと見る</a>
-</p>
-{% endif %}
-{% endfor %}
-<h3>最近の投稿</h3>
-<ul>
-  {% for post in site.posts limit: 3 %}
-  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
-{% if site.posts.size > 3 %}
-<p>
-  <a href="{{"/posts/" | relative_url}}">もっと見る</a>
-</p>
-{% endif %}
+  <nav class="featurePosts__item feature">
+    <h3 class="feature__title">最近の投稿</h3>
+    <div class="feature__body">
+      <ul class="feature__items">
+        {% for post in site.posts limit: 3 %}
+        <li class="feature__item">
+          <a href="{{ post.url | relative_url }}" class="featureLink">
+            <p class="featureLink__title">
+              {{ post.title }}
+            </p>
+            <p class="featureLink__excerpt">
+              {{ post.excerpt | strip_html }}
+            </p>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% if site.posts.size > 3 %}
+      <p class="feature__more">
+        <a href="{{"/posts/" | relative_url}}" class="feature__moreLink">もっと見る</a>
+      </p>
+      {% endif %}
+    </div>
+  </nav>
+</div>

@@ -24,9 +24,11 @@ layout: default
   {% if paginator.total_pages > 1 %}
   <div class="pager">
     {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url }}">Prev</a>
+    <a href="{{ paginator.previous_page_path | relative_url }}">
+      <span class="fas fa-angle-left"></span>
+    </a>
     {% else %}
-    <span>Prev</span>
+    <span class="fas fa-angle-left"></span>
     {% endif %}
 
     {% for page in (1..paginator.total_pages) %}
@@ -40,9 +42,11 @@ layout: default
     {% endfor %}
 
     {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | relative_url }}">Next</a>
+    <a href="{{ paginator.next_page_path | relative_url }}">
+      <span class="fas fa-angle-right"></span>
+    </a>
     {% else %}
-    <span>Next</span>
+    <span class="fas fa-angle-right"></span>
     {% endif %}
   </div>
   {% endif %}

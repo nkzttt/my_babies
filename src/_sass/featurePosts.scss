@@ -1,0 +1,82 @@
+.featurePosts {
+  &__item + &__item {
+    margin-top: 60px;
+    @media (max-width: $break-point) {
+      margin-top: 45px;
+    }
+  }
+}
+
+.feature {
+  &__title {
+    display: table;
+    margin-bottom: 30px;
+    padding: 5px 15px;
+    border-radius: 15px;
+    background-color: $yellow;
+    font-size: $font-middle;
+  }
+  &__items {
+    margin-bottom: 30px;
+    @media (max-width: $break-point) {
+      margin-bottom: 20px;
+    }
+  }
+  &__item + &__item {
+    margin-top: 30px;
+  }
+  &__more {
+    text-align: center;
+  }
+  &__moreLink {
+    @include readableFont();
+    color: $deepYellow;
+    font-size: $font-small;
+    &:hover {
+      color: $dimYellow;
+      text-decoration: none;
+    }
+  }
+}
+
+.featureLink {
+  display: block;
+  position: relative;
+  color: $black;
+  text-decoration: none;
+  &::after {
+    content: "";
+    display: block;
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(10px);
+    opacity: .2;
+    transition: opacity 300ms ease-in;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+  &__title {
+    margin-bottom: 10px;
+  }
+  &__excerpt {
+    @include readableFont();
+    font-size: $font-small;
+    line-height: 1.5;
+    opacity: .7;
+  }
+}
+.feature__item:nth-child(3n - 2) > .featureLink::after {
+  background: linear-gradient(to left, transparent, $yellow);
+}
+.feature__item:nth-child(3n - 1) > .featureLink::after {
+  background: linear-gradient(to left, transparent, $dimYellow);
+}
+.feature__item:nth-child(3n) > .featureLink::after {
+  background: linear-gradient(to left, transparent, $deepYellow);
+}
+

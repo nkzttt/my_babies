@@ -8,6 +8,7 @@
 @import "footprint";
 @import "list";
 @import "article";
+@import "featurePosts";
 
 @font-face {
   font-family: "Original Yu Gothic";
@@ -332,5 +333,12 @@ body {
     opacity: .1;
     transform: rotate(-30deg);
     filter: blur(60px);
+  }
+}
+
+.top {
+  padding: 30px 30px 0;
+  @media (max-width: $break-point) {
+    padding: 30px 15px 0;
   }
 }

@@ -8,9 +8,21 @@
 }
 
 .feature {
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    &::before {
+      content: "NEW!";
+      display: block;
+      padding-right: 10px;
+      color: $dimYellow;
+      font-size: $font-small;
+      font-style: italic;
+    }
+  }
   &__title {
     display: table;
-    margin-bottom: 30px;
     padding: 5px 15px;
     border-radius: 15px;
     background-color: $yellow;

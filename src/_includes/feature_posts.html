@@ -2,10 +2,12 @@
   {% for tag in site.tags %}
   {% assign tagName = tag[0] %}
   {% assign tagPosts = tag[1] %}
-  {% if tagName == 'childcare' %}{% assign tagName = '子育ての投稿' %}{% endif %}
-  {% if tagName == 'money' %}{% assign tagName = 'お金の投稿' %}{% endif %}
+  {% if tagName == 'childcare' %}{% assign tagName = '子育ての話' %}{% endif %}
+  {% if tagName == 'money' %}{% assign tagName = 'お金の話' %}{% endif %}
   <nav class="featurePosts__item feature">
-    <h3 class="feature__title">{{ tagName }}</h3>
+    <div class="feature__header">
+      <h3 class="feature__title">{{ tagName }}</h3>
+    </div>
     <div class="feature__body">
       <ul class="feature__items">
         {% for post in tagPosts limit: 3 %}
@@ -30,7 +32,9 @@
   </nav>
   {% endfor %}
   <nav class="featurePosts__item feature">
-    <h3 class="feature__title">最近の投稿</h3>
+    <div class="feature__header">
+      <h3 class="feature__title">最近の投稿</h3>
+    </div>
     <div class="feature__body">
       <ul class="feature__items">
         {% for post in site.posts limit: 3 %}

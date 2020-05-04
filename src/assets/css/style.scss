@@ -281,6 +281,7 @@ body {
     margin: 0 auto;
     padding-top: 30px;
     justify-content: flex-end;
+    align-items: flex-start;
     @media (max-width: $break-point) {
       width: auto;
     }
@@ -300,6 +301,13 @@ body {
     left: 0;
     right: 0;
     border: solid 5px $white;
+  }
+  &:nth-child(2) {
+    margin-top: -10px;
+    margin-left: 20px;
+    @media (max-width: $break-point) {
+      margin-left: 10px;
+    }
   }
   @media (max-width: $break-point) {
     width: 132px;

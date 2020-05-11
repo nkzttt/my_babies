@@ -3,5 +3,52 @@ layout: default
 ---
 
 <div class="top">
-  {% include feature_posts.html %}
+  <div class="top__record">
+    <div class="record">
+      <p class="record__title">長女の体重推移</p>
+      <div class="record__chart">
+        <svg viewBox="0 0 300 100">
+          <g>
+            <path d="
+            m0 50
+            l50 0
+            l50 40
+            l50 -10
+            l50 -30
+            l50 -30
+            l50 -10
+          "></path>
+            <circle cx="0" cy="50" r="5"></circle>
+            <circle cx="50" cy="50" r="5"></circle>
+            <circle cx="100" cy="90" r="5"></circle>
+            <circle cx="150" cy="80" r="5"></circle>
+            <circle cx="200" cy="50" r="5"></circle>
+            <circle cx="250" cy="20" r="5"></circle>
+            <circle cx="300" cy="10" r="5"></circle>
+          </g>
+          <g>
+            <path d="
+            m0 80
+            l50 10
+            l50 -50
+            l50 20
+            l50 30
+            l50 -30
+            l50 -30
+          "></path>
+            <circle cx="0" cy="80" r="5"></circle>
+            <circle cx="50" cy="90" r="5"></circle>
+            <circle cx="100" cy="40" r="5"></circle>
+            <circle cx="150" cy="60" r="5"></circle>
+            <circle cx="200" cy="90" r="5"></circle>
+            <circle cx="250" cy="60" r="5"></circle>
+            <circle cx="300" cy="30" r="5"></circle>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="top__posts">
+    {% include feature_posts.html %}
+  </div>
 </div>

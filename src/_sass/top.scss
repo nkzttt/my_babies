@@ -1,0 +1,59 @@
+.top {
+  &__record {
+    width: 100%;
+    margin-bottom: 60px;
+    @media (max-width: $break-point) {
+      margin-bottom: 45px;
+    }
+  }
+}
+
+.record {
+  position: relative;
+  &__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    color: $white;
+    font-size: $font-large;
+    letter-spacing: .15em;
+    text-shadow: 0 0 5px $black, 0 0 5px $black, 0 0 5px $black;
+    @media (max-width: $break-point) {
+      padding: 10px;
+      font-size: $font-middle;
+    }
+  }
+  &__chart {
+    border-radius: 15px;
+    background-color: $black;
+    overflow: hidden;
+    > svg {
+      width: 100%;
+      height: auto;
+      vertical-align: bottom;
+      > g {
+        > path {
+          fill: none;
+          stroke-width: 2px;
+        }
+        &:first-child {
+          > path {
+            stroke: $dimYellow;
+          }
+          > circle {
+            fill: $dimYellow;
+          }
+        }
+        &:last-child {
+          > path {
+            stroke: $yellow;
+          }
+          > circle {
+            fill: $yellow;
+          }
+        }
+      }
+    }
+  }
+}

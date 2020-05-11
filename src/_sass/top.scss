@@ -9,7 +9,13 @@
 }
 
 .record {
+  display: block;
   position: relative;
+  &:hover {
+    .record__chart > svg {
+      transform: scale(1.1);
+    }
+  }
   &__title {
     position: absolute;
     top: 0;
@@ -32,6 +38,8 @@
       width: 100%;
       height: auto;
       vertical-align: bottom;
+      transform-origin: 50% 75%;
+      transition: transform 300ms ease-out;
       > g {
         > path {
           fill: none;

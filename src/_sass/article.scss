@@ -97,6 +97,12 @@
         }
       }
     }
+    > hr {
+      margin: 60px 0 45px;
+      border: none;
+      outline: none;
+      border-bottom: dotted 5px $black;
+    }
   }
   &__adsense {
     margin-bottom: 90px;

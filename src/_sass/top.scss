@@ -47,10 +47,10 @@
         }
         &:first-child {
           > path {
-            stroke: $dimYellow;
+            stroke: $deepYellow;
           }
           > circle {
-            fill: $dimYellow;
+            fill: $deepYellow;
           }
         }
         &:last-child {

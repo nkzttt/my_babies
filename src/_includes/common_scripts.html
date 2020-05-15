@@ -5,3 +5,6 @@
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
 <script src="{{ "/assets/js/script.js" | relative_url }}"></script>
+{% for script in page.scripts %}
+<script src="{{ script | relative_url }}"></script>
+{% endfor %}

@@ -39,18 +39,35 @@
   // 出生体重描画スコープ
   (function startWeight() {
     var startWeight = eldestDaughterWeights["0"]["0"];
-    $('#start').text(startWeight + 'グラム');
+    $('#startWeight').text(startWeight.toLocaleString());
   })();
 
   // チャート・テーブル描画スコープ
-  (function weightChart() {
+  (function weightChartAndTable() {
     // 0ヶ月は出生体重のみなので除外
     var months = Object.keys(eldestDaughterWeights).filter(function (month) {
       return month !== '0';
     });
-    months.forEach(function (month) {
-      console.log({month});
-      console.log(eldestDaughterWeights[month]);
-    });
+
+    // チャートスコープ
+    (function weightChart() {
+
+    })();
+
+    // テーブルスコープ
+    (function weightTable() {
+      var html = '';
+      months.forEach(function (month) {
+        var weeks = Object.keys(eldestDaughterWeights[month]);
+        weeks.forEach(function (week, i) {
+          html += '<tr>';
+          html += i === 0 ? '<td rowspan="4">' + month + '</td>' : '';
+          html += '<td>' + week + '</td>';
+          html += '<td>' + eldestDaughterWeights[month][week].toLocaleString() + '</td>';
+          html += '</tr>';
+        });
+      });
+      $('#weightTable').html(html);
+    })();
   })();
 })();

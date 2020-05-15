@@ -1,7 +1,12 @@
 ---
 layout: default
+title: 長女の体重推移
+cdnStylesheets:
+  - //cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 scripts:
   - /assets/js/weight.js
+cdnScripts:
+- //cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 ---
 
 <section class="weight">
@@ -9,12 +14,16 @@ scripts:
     <h2 class="weightTitle">長女の体重推移</h2>
   </div>
   <div class="weight__body">
-    <p class="startWeight">
-      出生体重：<span id="startWeight">---</span>グラム
-    </p>
     <div class="weightChart">
-      <div style="height: 300px; background-color: #aaa;"></div>
+      <div class="ct-chart ct-perfect-fourth"></div>
+      <div class="chartGuide">
+        <p class="chartGuide__item chartGuide__item--child">長女</p>
+        <p class="chartGuide__item chartGuide__item--average">平均（厚生労働省の調査データより）</p>
+      </div>
     </div>
+    <p class="startWeight">
+      （出生体重：<span id="startWeight">---</span>グラム）
+    </p>
     <table class="weightTable">
       <thead>
         <tr>

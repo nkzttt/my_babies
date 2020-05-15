@@ -1,4 +1,7 @@
+{% for stylesheet in page.cdnStylesheets %}
+<link rel="stylesheet" href="{{ stylesheet }}">
+{% endfor %}
 <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
 {% for stylesheet in page.stylesheets %}
-<script src="{{ stylesheet | relative_url }}"></script>
+<link rel="stylesheet" href="{{ stylesheet | relative_url }}">
 {% endfor %}

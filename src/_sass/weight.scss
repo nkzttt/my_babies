@@ -1,3 +1,5 @@
+$averageColor: #ccc;
+
 .weight {
   padding: 30px 30px 0;
   @media (max-width: $break-point) {
@@ -25,20 +27,71 @@
   }
 }
 
-.startWeight {
-  margin-bottom: 30px;
-  @include readableFont();
-  font-size: $font-small;
-  @media (max-width: $break-point) {
-    margin-bottom: 15px;
-  }
-}
-
 .weightChart {
   margin-bottom: 60px;
   @media (max-width: $break-point) {
     margin-bottom: 45px;
   }
+}
+
+.ct-chart {
+  margin-bottom: 10px;
+}
+.ct-label {
+  @include readableFont();
+  color: $black;
+  white-space: nowrap;
+}
+.ct-series-a {
+  .ct-point, .ct-line {
+    stroke: $averageColor;
+  }
+}
+.ct-series-b {
+  .ct-point, .ct-line {
+    stroke: $yellow;
+  }
+}
+
+.chartGuide {
+  display: flex;
+  justify-content: flex-end;
+  @media (max-width: $break-point) {
+    display: block;
+  }
+  &__item {
+    @include readableFont();
+    font-size: $font-small;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 5px;
+      position: relative;
+      top: -1px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+    &--average::before {
+      background-color: $averageColor;
+    }
+    &--child::before {
+      background-color: $yellow;
+    }
+    & + & {
+      margin-left: 30px;
+      @media (max-width: $break-point) {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.startWeight {
+  margin-bottom: 15px;
+  @include readableFont();
+  font-size: $font-small;
 }
 
 .weightTable {

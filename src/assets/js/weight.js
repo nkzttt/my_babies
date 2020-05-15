@@ -51,7 +51,35 @@
 
     // チャートスコープ
     (function weightChart() {
-
+      var labels = months.map(function (month) {
+        var labels = Object.keys(eldestDaughterWeights[month]).fill('');
+        labels[0] = month + 'ヶ月';
+        return labels;
+      }).reduce(function (prev, current) {
+        return prev.concat(current);
+      }, []);
+      var eldestDaughterWeightValues = months.map(function (month) {
+        var weeks = Object.keys(eldestDaughterWeights[month]);
+        return weeks.map(function (week) {
+          return eldestDaughterWeights[month][week];
+        });
+      }).reduce(function (prev, current) {
+        return prev.concat(current);
+      }, []);
+      // source: https://www.mhlw.go.jp/stf/shingi/2r9852000001tmct-att/2r9852000001tmea.pdf
+      var averageWeightValues = [4460, 4780, 5100, 5420, 5605, 5790, 5975, 6160, 6302, 6445, 6587, 6730, 6840, 6950, 7060/* , 7170 */];
+      var data = {
+        labels: labels,
+        series: [ averageWeightValues, eldestDaughterWeightValues ],
+      };
+      new Chartist.Line('.ct-chart', data, {
+        chartPadding: { left: 15 },
+        axisY: {
+          labelInterpolationFnc: function (v) {
+            return v.toLocaleString();
+          }
+        }
+      });
     })();
 
     // テーブルスコープ

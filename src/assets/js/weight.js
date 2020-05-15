@@ -35,5 +35,22 @@
       3: 6300,
     },
   };
-  console.log($.fn);
+
+  // 出生体重描画スコープ
+  (function startWeight() {
+    var startWeight = eldestDaughterWeights["0"]["0"];
+    $('#start').text(startWeight + 'グラム');
+  })();
+
+  // チャート・テーブル描画スコープ
+  (function weightChart() {
+    // 0ヶ月は出生体重のみなので除外
+    var months = Object.keys(eldestDaughterWeights).filter(function (month) {
+      return month !== '0';
+    });
+    months.forEach(function (month) {
+      console.log({month});
+      console.log(eldestDaughterWeights[month]);
+    });
+  })();
 })();

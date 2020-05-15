@@ -1,0 +1,67 @@
+.weight {
+  padding: 30px 30px 0;
+  @media (max-width: $break-point) {
+    padding: 30px 15px 0;
+  }
+  &__header {
+    margin-bottom: 60px;
+    @media (max-width: $break-point) {
+      margin-bottom: 45px;
+    }
+  }
+}
+
+.weightTitle {
+  display: inline-block;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: $black;
+  color: $white;
+  font-size: $font-large;
+  letter-spacing: .15em;
+  @media (max-width: $break-point) {
+    padding: 10px;
+    font-size: $font-middle;
+  }
+}
+
+.startWeight {
+  margin-bottom: 30px;
+  @include readableFont();
+  font-size: $font-small;
+  @media (max-width: $break-point) {
+    margin-bottom: 15px;
+  }
+}
+
+.weightChart {
+  margin-bottom: 60px;
+  @media (max-width: $break-point) {
+    margin-bottom: 45px;
+  }
+}
+
+.weightTable {
+  min-width: 40%;
+  border-collapse: collapse;
+  @include readableFont();
+  font-size: $font-small;
+  line-height: 1.2;
+  text-align: right;
+  @media (max-width: $break-point) {
+    width: 100%;
+  }
+  th {
+    background: $black;
+    color: $white;
+    font-weight: normal;
+  }
+  th, td {
+    padding: 5px 10px;
+    border: solid 1px $black;
+    vertical-align: top;
+    &:last-child {
+      white-space: normal;
+    }
+  }
+}

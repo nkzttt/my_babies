@@ -6,6 +6,7 @@
 @import "sizes";
 @import "loading";
 @import "footprint";
+@import "weightGraph";
 @import "top";
 @import "list";
 @import "article";
@@ -220,6 +221,26 @@ body {
     width: 100%;
     font-size: $font-small;
     text-align: center;
+  }
+}
+
+.weightLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 10px;
+  border-radius: 10px;
+  background-color: $black;
+  color: $white;
+  text-decoration: none;
+  letter-spacing: .1em;
+  &__image {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+  }
+  &:hover &__image {
+    transform: scale(1.2);
   }
 }
 

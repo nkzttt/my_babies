@@ -1,0 +1,27 @@
+.weightGraph {
+  vertical-align: bottom;
+  transform-origin: 50% 75%;
+  transition: transform 300ms ease-out;
+  > g {
+    > path {
+      fill: none;
+      stroke-width: 2px;
+    }
+    &:first-child {
+      > path {
+        stroke: $deepYellow;
+      }
+      > circle {
+        fill: $deepYellow;
+      }
+    }
+    &:last-child {
+      > path {
+        stroke: $yellow;
+      }
+      > circle {
+        fill: $yellow;
+      }
+    }
+  }
+}

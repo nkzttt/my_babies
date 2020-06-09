@@ -38,6 +38,7 @@
     6: {
       1: 6400,
       2: 6500,
+      3: 6500,
     },
   };
 
@@ -72,7 +73,7 @@
         return prev.concat(current);
       }, []);
       // source: https://www.mhlw.go.jp/stf/shingi/2r9852000001tmct-att/2r9852000001tmea.pdf
-      var averageWeightValues = [4460, 4780, 5100, 5420, 5605, 5790, 5975, 6160, 6302, 6445, 6587, 6730, 6840, 6950, 7060, 7170, 7257, 7345,/* 7432, 7520*/];
+      var averageWeightValues = [4460, 4780, 5100, 5420, 5605, 5790, 5975, 6160, 6302, 6445, 6587, 6730, 6840, 6950, 7060, 7170, 7257, 7345, 7432,/* 7520*/];
       var data = {
         labels: labels,
         series: [ averageWeightValues, eldestDaughterWeightValues ],
